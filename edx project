@@ -1,0 +1,15 @@
+def isIn(char, aStr):
+    i = int(len(aStr)/2)
+    a = aStr[i]
+    if aStr == '':
+        return False
+    if len(aStr) == 1:
+        return aStr == char
+    if a == char:
+        return True
+    elif a > char:
+        return isIn(char, aStr[:i])
+    else:
+        return isIn(char, aStr[i+1:])
+
+print(isIn("a", ""))
